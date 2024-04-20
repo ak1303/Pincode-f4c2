@@ -34,7 +34,7 @@ function Details({data, pincode}) {
                         )
                     }))
                     :
-                    (  filteredData && filteredData.map(postoffice=>{
+                    (  filteredData && filteredData.length > 0 ?(filteredData.map(postoffice=>{
                         return(
                             <div key={postoffice.Name} className="p-2 border-2 border-black flex flex-col gap-2 w-full rounded-md" >
                                 <div>Name: {postoffice.Name}</div>
@@ -44,7 +44,7 @@ function Details({data, pincode}) {
                                 <div>Division: {postoffice.Division}</div>
                             </div>
                         )
-                        })
+                        })):<div className="font-bold text-xl" >Couldn't find the postal data you're looking for…</div>
                     )
                 )
             }
